@@ -1,0 +1,13 @@
+{
+  "client": "Client A (synthetic)",
+  "about": "A synthetic mid-size Australian financial services firm piloting coding and support agents. Not a real organisation.",
+  "maturity": "m2",
+  "stack": ["claude-code", "aws", "okta-ai-agents", "wiz", "microsoft-purview"],
+  "have_controls": ["c4-1", "c7-1", "c6-1"],
+  "concerns": [
+    "How does agent-to-agent (A2A) authorisation work, and how do we stop one agent acting with another agent's permissions?",
+    "What gateway do we need in front of models and MCP tools?",
+    "Can prompts, outputs and agent memory stay in Australia?",
+    "How do we make a person approve an agent action before it runs, with evidence of who approved it?"
+  ]
+}
