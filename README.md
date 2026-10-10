@@ -15,7 +15,7 @@ The sample is kept small on purpose, as an example that stays light enough to ru
 | --- | --- |
 | `okf/atlas/` | 690 concepts in Open Knowledge Format v0.2: one per cell for the 14 platforms, the 44 control concepts, the tree's ingestion rules and an agent guide |
 | `okf/atlas/retrieval-index.json` | The sample's retrieval index, so a reader never parses YAML: path, verdict, verification state, eligibility basis, sources and chunk names for each concept |
-| `web/atlas-sample.json` | The compact data file the interactive questionnaire reads: 610 eligible records, the controls, maturity stages, offerings and the keyword router |
+| `web/atlas-sample.json` | The compact data file the interactive questionnaire reads: 610 eligible records, the controls, maturity stages, offerings and the keyword router, plus the names of 37 more platforms the demo shows greyed out as reserved for the full version |
 | `app/` | The questionnaire's browser code, with no dependencies |
 | `examples/` | A synthetic client questionnaire, the model-written answer to it, and a simulated freshness pull request with an approver chain |
 | `docs/` | The loop diagram |
