@@ -109,7 +109,7 @@ sources:
     tier: 1
 generated:
   by: "process:offerings-atlas-ingest"
-  at: "2026-10-10T18:00:00+10:00"
+  at: "2026-10-14T18:00:00+10:00"
 ---
 
 Every source the AWS cells cite, with its tier from the atlas source register. Tier 1 and 2 sources can verify a claim within their subject. Tier 3 can only hold it as provisional.

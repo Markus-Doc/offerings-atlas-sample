@@ -16,7 +16,7 @@ sources:
     locator: "platforms, id google-cloud"
 generated:
   by: "process:offerings-atlas-ingest"
-  at: "2026-10-10T18:00:00+10:00"
+  at: "2026-10-14T18:00:00+10:00"
 ---
 
 Google Cloud as an AI and agent platform: Gemini Enterprise Agent Platform (formerly Vertex AI, including Agent Runtime, formerly Agent Engine), Model Garden, Model Armor, Agent Development Kit, and supporting IAM, Agent Identity, VPC Service Controls, Cloud Audit Logs, Security Command Center AI Protection and Sensitive Data Protection, excluding the Gemini API and AI Studio surface.

@@ -16,7 +16,7 @@ sources:
     locator: "platforms, id github"
 generated:
   by: "process:offerings-atlas-ingest"
-  at: "2026-10-10T18:00:00+10:00"
+  at: "2026-10-14T18:00:00+10:00"
 ---
 
 Copilot cloud agent, CLI, SDK and enterprise controls. Repository, client, sandbox and policy boundaries differ.

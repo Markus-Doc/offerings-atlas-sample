@@ -41,7 +41,9 @@ Offering and Decision pages are refused. Offerings live in the kb-hub business t
 
 Every page carries `type`, `title`, `description`, `classification`, `owner`, `status`, `review`, `verification`, `tags`, `sources` and `generated`. Finding pages add an `atlas` block (platform, control, group, verdict, eligibility and its reasons, high-risk tags, check date, and the origin file with its SHA-256), plus `stale_after` and OKF `verified` events when an evaluator has verified them. The `atlas` block also records `eligibility_basis`: `agent-verified`, `owner-accepted` or null.
 
-`retrieval-index.json` lists every concept page with its path, platform, group, control, category, verdict, verification, eligibility basis, eligibility, sources (URL, locator, tier), chunk names and SHA-256, so a consumer can filter and fetch without parsing YAML.
+A not-addressed finding also gets `gap_kind` and `scope_status` in its `atlas` block. `gap_kind` is `out-of-scope` when the column's list in `data/column-scope.json` names the control, so the product is not meant to cover it, and `in-scope-gap` otherwise, so it is a real gap. `scope_status` is that list's review status, `proposed` or `accepted`. Only the owner accepts a list. Both are null for every other verdict.
+
+`retrieval-index.json` lists every concept page with its path, platform, group, control, category, verdict, gap kind, scope status, verification, eligibility basis, eligibility, sources (URL, locator, tier), chunk names and SHA-256, so a consumer can filter and fetch without parsing YAML.
 
 - `classification` is C1 for the whole tree.
 - `review` is always `pending`. Only the owner sets `approved`, and never in this tree.
@@ -64,7 +66,7 @@ A verified finding is agent-eligible on evaluator evidence when all of these hol
 1. One evaluation is supported, passed the quote check, used a tier 1 or 2 source whose registered tier and URL match, and came from a different run than the one that drafted the finding.
 2. A high-risk finding (decision 0008) has such evaluations from two model families.
 3. No later evaluation is contradicted or outdated.
-4. The verdict is not `not-addressed`. Absence checks are shown but never verify.
+4. The verdict is not `not-addressed`. Absence checks are shown but never verify. Under atlas decision 0011 an absence check can make an in-scope gap eligible on the `absence-checked` basis instead, when its `gap_status` is at or above `absence_checked.min_label`, until its next recheck date.
 5. The classification is C1 and the page was not withheld.
 6. The recheck date (`review_on`) is after the generation date. It becomes `eligible_until`.
 
@@ -72,7 +74,9 @@ A page that meets these rules has `eligibility_basis: agent-verified`.
 
 ### Proof-of-concept basis: owner acceptance
 
-For this proof of concept only, the owner accepted every researched finding that no evaluator run has checked (`data/owner-acceptance.json`, 2026-10-10). Such a finding is agent-eligible with `eligibility_basis: owner-accepted` when it is unverified, has no evaluation and no absence check, and is C1 and not withheld. It has no `eligible_until` and no OKF `verified` event, because no agent or person has checked the page itself. An evaluator verdict replaces it: once a finding has any evaluation, only the agent-verified basis can make it eligible. Contested, invalidated, stale and provisional findings are never eligible on either basis. A real enterprise tree turns this basis off by setting `owner_acceptance.enabled` to false.
+For this proof of concept only, the owner accepted every researched finding that no evaluator run has checked (`data/owner-acceptance.json`, 2026-10-10). It covers research up to that date, or up to `covers_research_through` when the owner extends it, so a finding researched later stays out until it is checked or the acceptance is extended. Such a finding is agent-eligible with `eligibility_basis: owner-accepted` when it is unverified, has no evaluation and no absence check, and is C1 and not withheld. It has no `eligible_until` and no OKF `verified` event, because no agent or person has checked the page itself. Rule 4 above does not apply on this basis: there is no verdict filter, so an unchecked `not-addressed` or `unresolved` finding is owner-accepted, and an absence check ends that standing like an evaluation does, leaving the `absence-checked` basis as the gap's only way back. An evaluator verdict replaces it: once a finding has any evaluation, only the agent-verified basis can make it eligible. Contested, invalidated, stale and provisional findings are never eligible on either basis. A real enterprise tree turns this basis off by setting `owner_acceptance.enabled` to false.
+
+The gap rule, `owner_acceptance.gap_rule`, narrows this basis for absence claims. It is off until the owner switches it on. When on, an unchecked finding whose verdict is in its `verdicts` list is owner-accepted only when its `gap_kind` is `out-of-scope` on an `accepted` column scope list. In-scope gaps, unresolved cells and anything on a proposed list then stay out until an evaluator basis covers them.
 
 Eligible pages get `status: stable` and an entry in `agent-eligible.json` with their basis. Every other page is `status: draft`, shows its state and the reasons it is not eligible, and stays readable for people. Agents filter on `agent-eligible.json` before retrieval.
 
@@ -109,14 +113,20 @@ A finding whose text contains a money figure, an email address, a phone number, 
   "tags": ["group", "category", "verdict", "state"],
   "finding_chunks": ["answer", "products", "gaps", "options", "evidence", "sources"],
   "max_chunk_words": 600,
-  "eligibility_bases": ["agent-verified", "owner-accepted"],
+  "eligibility_bases": ["agent-verified", "owner-accepted", "absence-checked"],
   "owner_acceptance": {
     "enabled": true,
     "record": "data/owner-acceptance.json",
     "basis": "owner-accepted",
     "states": ["unverified"],
-    "proof_of_concept_only": true
+    "proof_of_concept_only": true,
+    "gap_rule": {
+      "enabled": false,
+      "verdicts": ["not-addressed", "unresolved"],
+      "keep": {"gap_kind": "out-of-scope", "scope_status": "accepted"}
+    }
   },
+  "absence_checked": {"enabled": true, "min_label": "likely", "client_min_label": "confirmed", "recheck_days": 90},
   "eligibility": {
     "state": "verified",
     "outcome": "supported",

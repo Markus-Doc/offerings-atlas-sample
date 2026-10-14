@@ -16,7 +16,7 @@ sources:
     locator: "platforms, id anthropic"
 generated:
   by: "process:offerings-atlas-ingest"
-  at: "2026-10-10T18:00:00+10:00"
+  at: "2026-10-14T18:00:00+10:00"
 ---
 
 Claude APIs, Agent SDK, Claude Code and Managed Agents beta. Hosted and self-hosted responsibilities are assessed separately.

@@ -16,7 +16,7 @@ sources:
     locator: "platforms, id microsoft-entra-agent-id"
 generated:
   by: "process:offerings-atlas-ingest"
-  at: "2026-10-10T18:00:00+10:00"
+  at: "2026-10-14T18:00:00+10:00"
 ---
 
 Microsoft Entra Agent ID is the Entra ID identity type for AI agents (agent identity blueprints, agent identities and agents' user accounts), and this research covers it with the Entra Conditional Access, ID Protection, ID Governance and Global Secure Access features that Microsoft documents for agents, plus the Copilot Studio integration.

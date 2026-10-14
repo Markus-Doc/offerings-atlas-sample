@@ -16,7 +16,7 @@ sources:
     locator: "platforms, id aws"
 generated:
   by: "process:offerings-atlas-ingest"
-  at: "2026-10-10T18:00:00+10:00"
+  at: "2026-10-14T18:00:00+10:00"
 ---
 
 Bedrock and AgentCore runtime, identity, tools, memory and AWS operating controls. Documentation checked 2026-10-07, deployment untested.

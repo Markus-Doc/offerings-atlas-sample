@@ -16,7 +16,7 @@ sources:
     locator: "platforms, id claude-code"
 generated:
   by: "process:offerings-atlas-ingest"
-  at: "2026-10-10T18:00:00+10:00"
+  at: "2026-10-14T18:00:00+10:00"
 ---
 
 Anthropic's agentic coding tool (CLI, IDE extensions, desktop Code tab, cloud and self-hosted sessions) with the Claude Agent SDK and the Claude apps gateway built into the same binary, researched from the public Claude Code documentation.

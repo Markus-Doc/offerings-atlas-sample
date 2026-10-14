@@ -16,7 +16,7 @@ sources:
     locator: "platforms, id okta-ai-agents"
 generated:
   by: "process:offerings-atlas-ingest"
-  at: "2026-10-10T18:00:00+10:00"
+  at: "2026-10-14T18:00:00+10:00"
 ---
 
 Okta workforce identity features for AI agents (Universal Directory agent registration, Agent SSO with Cross App Access, resource connections, Agent Gateway, ISPM agent discovery, Okta Identity Governance for agents and the kill switch), plus Auth0 for AI Agents and the acquired Permiso Security detection platform.

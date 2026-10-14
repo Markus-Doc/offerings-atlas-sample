@@ -16,7 +16,7 @@ sources:
     locator: "offerings"
 generated:
   by: "process:offerings-atlas-ingest"
-  at: "2026-10-10T18:00:00+10:00"
+  at: "2026-10-14T18:00:00+10:00"
 ---
 
 Read-only mirror of the atlas offering proposals in `data/offerings.json`. Every entry is proposed. Offerings themselves live in the kb-hub business tree, and only the owner accepts them.

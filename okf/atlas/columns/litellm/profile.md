@@ -16,7 +16,7 @@ sources:
     locator: "platforms, id litellm"
 generated:
   by: "process:offerings-atlas-ingest"
-  at: "2026-10-10T18:00:00+10:00"
+  at: "2026-10-14T18:00:00+10:00"
 ---
 
 LiteLLM is an open-source, self-hosted AI gateway (proxy) from BerriAI that fronts model providers, MCP servers and A2A agents. This research covers the open-source proxy and the features gated behind a LiteLLM Enterprise licence, as documented on docs.litellm.ai.

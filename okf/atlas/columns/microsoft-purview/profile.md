@@ -16,7 +16,7 @@ sources:
     locator: "platforms, id microsoft-purview"
 generated:
   by: "process:offerings-atlas-ingest"
-  at: "2026-10-10T18:00:00+10:00"
+  at: "2026-10-14T18:00:00+10:00"
 ---
 
 Microsoft's data security and compliance suite as it applies to Copilot, Agent 365, Copilot Studio, Foundry, Fabric data agents and third-party AI apps, covering Data Security Posture Management (current and DSPM for AI classic), Compliance Manager, Audit, DLP, Insider Risk Management, Communication Compliance, eDiscovery, Data Lifecycle Management, the Purview APIs and SDK, and Unified Catalog as documented on Microsoft Learn.

@@ -15,7 +15,7 @@ sources:
     locator: "Proposed choice"
 generated:
   by: "process:offerings-atlas-ingest"
-  at: "2026-10-10T18:00:00+10:00"
+  at: "2026-10-14T18:00:00+10:00"
 ---
 
 This tree is generated. Never edit it. Change the atlas store and rerun the ingest, under the [ingestion rules](rules/ingestion.md).
@@ -23,7 +23,7 @@ This tree is generated. Never edit it. Change the atlas store and rerun the inge
 ## Reading
 
 1. Load `agent-eligible.json` (or `retrieval-index.json`) and drop entries whose `eligible_until` has passed.
-   Each entry names its basis: `agent-verified` (an evaluator checked it) or `owner-accepted` (proof-of-concept only, unchecked research the owner accepted). Say which when you quote it.
+   Each entry names its basis: `agent-verified` (an evaluator checked it), `absence-checked` (an in-scope gap that survived absence checks to the search standard, still unverified, with its `gap_status`) or `owner-accepted` (proof-of-concept only, unchecked research the owner accepted). Say which when you quote it.
 2. Retrieve, index or summarise only the pages left in that list. Every other page is for people to read.
 3. Quote a cell with its verdict, its state, its gaps and its sources. A positive answer alone drops qualifiers.
 

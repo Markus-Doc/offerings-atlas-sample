@@ -16,7 +16,7 @@ sources:
     locator: "platforms, id kong-ai-gateway"
 generated:
   by: "process:offerings-atlas-ingest"
-  at: "2026-10-10T18:00:00+10:00"
+  at: "2026-10-14T18:00:00+10:00"
 ---
 
 Kong AI Gateway 2.x on Kong Konnect, which governs LLM, MCP and A2A traffic through AI Model, AI MCP Server and AI Agent entities and AI Policies, plus the Konnect Catalog entries for AI models, MCP servers, agents (beta) and the MCP Registry (tech preview).
@@ -74,7 +74,7 @@ Column group: AI and MCP gateways. Facts are agent-run under atlas decision 0005
 | [Administrative Audit](c7-1.md) | Agentic MLSecOps | partial | unverified | yes |
 | [SOC Telemetry](c7-2.md) | Agentic MLSecOps | partial | unverified | yes |
 | [Model Assurance](c7-3.md) | Agentic MLSecOps | not-addressed | unverified | yes |
-| [Runtime Assurance](c7-4.md) | Agentic MLSecOps | not-addressed | unverified | yes |
+| [Runtime Assurance](c7-4.md) | Agentic MLSecOps | not-addressed | unverified | no |
 | [First-Party Tool Assurance](c7-5.md) | Agentic MLSecOps | partial | unverified | yes |
 | [Third-Party Tool Assurance](c7-6.md) | Agentic MLSecOps | not-addressed | unverified | yes |
 | [Data & Feature Stores](c7-8.md) | Agentic MLSecOps | partial | unverified | yes |

@@ -16,7 +16,7 @@ sources:
     locator: "platforms, id langfuse"
 generated:
   by: "process:offerings-atlas-ingest"
-  at: "2026-10-10T18:00:00+10:00"
+  at: "2026-10-14T18:00:00+10:00"
 ---
 
 Langfuse is an open-source (MIT, except ee folders) LLM engineering platform for tracing, evaluation and prompt management, and this research covers Langfuse Cloud (Hobby, Core, Pro, Enterprise) and self-hosted OSS and Enterprise Edition.
